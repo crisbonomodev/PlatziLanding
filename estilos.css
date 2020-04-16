@@ -1,3 +1,145 @@
 body {
     background-color: #f2f2f2;
+    font-family: 'Lato', sans-serif;
+    margin: 0;
+}
+
+.hero {
+    background-color: #23475b;
+    padding: 32px 15px;
+    color: white;
+    margin: 0;
+}
+
+.title {
+    grid-area: title;
+    font-size: 36px;
+    font-weight: normal;
+    margin: 0;
+    display: flex;
+    align-items: center;
+}
+
+.form {
+    grid-area: form;
+    text-align: center;
+    background-color: rgba(255, 255 , 255, .9);
+    padding: 1.5em;
+    border-radius: 10px;
+}
+
+.form input {
+    width: 100%;
+    padding: 10px;
+    font-size: 16px;
+    border: 1px soiid #dbdbe2;
+    border-radius: 5px;
+    box-sizing: border-box;
+    margin-bottom: 10px;
+}
+
+.form p {
+    font-size: 20px;
+    margin-bottom: 1em;
+    color: #3a3b3f;
+}
+
+.form button {
+    background-color: #98ca3f ;
+    color: white;
+    padding: 10px 15px;
+    border-radius: 5px;
+    border: none;
+    border-bottom: 5px solid #6d932b;
+    display: inline-block;
+    font-size: 16px;
+}
+
+.countdown {
+    grid-area: countdown;
+}
+
+.countdown p {
+    font-size: 20px;
+    text-align: center;
+    font-weight: 300;
+}
+
+.countdown span {
+    font-size: 33px;
+}
+
+.countdown span:after {
+    content:":";
+    display: inline-block;
+    margin:0 5px;
+}
+
+.countdown span:last-child:after {
+    display: none;
+}
+
+p {
+    margin: 0;
+}
+
+.hero {
+    display: grid;
+    grid-template-columns: minmax(auto, 1024px);
+    justify-content: center;
+    
+    
+}
+.hero-container {
+    display: grid;
+    grid-template-columns: 70px auto 350px;
+    grid-template-areas:   "badge title form"
+                           ". description form"
+                           ". countdown form";
+    
+    align-content: center;
+    gap: 10px;
+    
+}
+
+.badge {
+    grid-area: badge;
+    display: flex;
+    align-items: flex-end;
+    justify-content: flex-end;
+}
+
+.badge img {
+    width: 70px;
+    height:70px;
+}
+
+
+
+.description {
+    grid-area: description;
+}
+
+@media screen and (max-width:425px) {
+    .hero-container {
+        display: grid;
+        grid-template-columns: 70px auto;
+        grid-template-areas:   "badge title"
+                               "description description"
+                               "countdown countdown "
+                               "form form";
+        
+        align-content: center;
+        gap: 10px;
+}
+
+@media screen and (max-width:320px) {
+
+    .countdown span {
+        font-size: 24px;
+    }
+
+    .title {
+        font-size: 26px;
+    }
 }
